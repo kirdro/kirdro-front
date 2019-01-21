@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+node_modules/
+Будет удалено .idea/dbnavigator.xml
+Будет удалено .idea/encodings.xml
+Будет удалено .idea/kirdro-front.iml
+Будет удалено .idea/misc.xml
+Будет удалено .idea/modules.xml
+Будет удалено .idea/preferred-vcs.xml
+Будет удалено .idea/sonarlint/
+Будет удалено .idea/workspace.xml
+Будет удалено lib/
+Будет удалено node_modules/
+Будет удалено package-lock.json
+Будет удалено package.json

@@ -1,0 +1,73 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background: #1a1a1a;
+}
+#ReactComponent {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  .container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    .box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transition: .5s -webkit-filter linear;
+      .boxImage {
+        -webkit-mask-image: -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(1%,transparent),color-stop(30%,#000),color-stop(50%,#000),color-stop(70%,#000),to(transparent));
+        -webkit-mask-image: linear-gradient(180deg,transparent 0,transparent 1%,#000 30%,#000 50%,#000 70%,transparent);
+        mask-image: -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(1%,transparent),color-stop(30%,#000),color-stop(50%,#000),color-stop(70%,#000),to(transparent));
+        mask-image: linear-gradient(180deg,transparent 0,transparent 1%,#000 30%,#000 50%,#000 70%,transparent);
+        width: 100%;
+        height: 900px;
+      }
+    }
+
+
+  }
+}
+.titleSite {
+  width: 100%;
+  display: flex;
+  height: 737px;
+  font-family: "Source Code Pro", monospace;
+  align-items: center;
+  justify-content: center;
+  .title {
+    display: flex;
+    //align-items: center;
+    flex-direction: column;
+  }
+  h1 {
+    display: block;
+    width: fit-content;
+    background: #8389da69;
+    border-radius: 3px;
+    padding: 4px;
+  }
+  span {
+    font-weight: 500;
+    display: block;
+    width: fit-content;
+    background: #8389da69;
+    border-radius: 3px;
+    padding: 4px;
+  }
+}
+.content {
+  width: 100%;
+  height: 100%;
+}

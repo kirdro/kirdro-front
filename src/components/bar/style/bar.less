@@ -1,0 +1,34 @@
+.boxBar {
+  transition: opacity 0.5s;
+  width: 600px;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  right: 100px;
+  display: flex;
+  .bar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    .itemBar {
+      display: flex;
+      width: calc(100% / 6);
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      span {
+        font-family: "Source Code Pro", monospace;
+        color: #27d47f;
+        font-weight: 100;
+      }
+      span:hover {
+        font-family: "Source Code Pro", monospace;
+        color: #bcffb4;
+        font-weight: 100;
+      }
+    }
+  }
+}
