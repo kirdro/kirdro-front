@@ -23,19 +23,23 @@ const MainComponent = memo(() => {
     const [isPressed, onClick] = useGlobal('isPressedButtonMenu');
     const [statusBar, onClick2] = useGlobal('statusBar');
 
-    let componentInContent
-    switch(statusBar) {
-        case 'Main':  // if (x === 'value1')
-            componentInContent = null;
+    const onClickLogo = () => {
+        onClick2('Main')
+    }
 
-        case 'Work':  // if (x === 'value2')
-            componentInContent = <WorkBox/>
-        }
-    // console.log('>>>>>', style)
+    let componentInContent
+    if (statusBar === 'Main') {
+        componentInContent = null;
+    }
+    else if (statusBar === 'Work') {
+        componentInContent = <WorkBox/>
+    }
+    console.log('>>>>>', statusBar, componentInContent)
     return (
         <div className={'main'}>
             <div className="container">
                 <DivBoxWithBackground isPressed={isPressed} className="box">
+                    <div onClick={onClickLogo} className="logo"></div>
                     <DivBoxImage statusBar={statusBar} className="boxImage">
                         <div className="titleSite">
                             <div className={'title'}>

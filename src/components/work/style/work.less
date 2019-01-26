@@ -1,4 +1,38 @@
+@keyframes example {
+  from {color: rgb(187, 187, 187);}
+  to {color: red;}
+}
+
+
 .boxWork {
   height: 100%;
   width: 100%;
+  .workContent {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: start;
+    grid-template-rows: auto;
+    .itemGrid {
+      height: fit-content;
+      padding: 100px;
+      h1{
+        text-align: center;
+        color: rgb(187, 187, 187);
+        font-family: "Source Code Pro", monospace;
+        font-size: 3.33em;
+      }
+      p{
+        color: rgb(187, 187, 187);
+        font-size: 1.272em;
+        font-family: "Source Code Pro", monospace;
+      }
+    }
+  }
+}
+.imageBoxItem {
+  width: 760px;
+  height: 630px;
 }

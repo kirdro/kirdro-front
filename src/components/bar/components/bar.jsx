@@ -3,8 +3,10 @@ import { useGlobal } from 'reactn';
 
 const Bar = () => {
     const [statusBar, onClick] = useGlobal('statusBar');
+    const [isPressedButtonMenu, onClick2] = useGlobal('isPressedButtonMenu');
     const onClickBarItem = (status) => (e) => {
         onClick(status)
+        onClick2(false)
     }
     return (
         <div className={'bar'}>
