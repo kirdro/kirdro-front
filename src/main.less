@@ -7,7 +7,11 @@ body {
   height: 100%;
   margin: 0px;
   background: #1a1a1a;
+  font-family: "Source Code Pro", monospace;
 }
+
+
+
 #ReactComponent {
   width: 100%;
   height: 100%;
@@ -80,4 +84,35 @@ body {
   left: 10px;
   cursor: pointer;
 
+}
+audio {
+  opacity: 0.3;
+  height: 20px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+}
+audio:hover {
+  opacity: 1 !important;
+}
+
+.react-h5-audio-player {
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    .toggle-play-wrapper {
+      flex: 1 0 60px;
+      -webkit-box-flex: 1 0 60px;
+      -moz-box-flex: 1 0 60px;
+      -ms-flex: 1 0 60px;
+    }
+    .progress-bar-wrapper {
+      flex: 10 0 auto;
+      -webkit-box-flex: 10 0 auto;
+      -moz-box-flex: 10 0 auto;
+      -ms-flex: 10 0 auto;
+    }
+  }
 }

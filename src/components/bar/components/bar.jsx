@@ -15,7 +15,7 @@ const Bar = () => {
             <div className="itemBar"><span onClick={onClickBarItem('About')}>About</span></div>
             <div className="itemBar"><span onClick={onClickBarItem('Contact')}>Contact</span></div>
             <div className="itemBar"><span onClick={onClickBarItem('Blog')}>Blog</span></div>
-            <div className="itemBar"><span onClick={onClickBarItem('Gelarry')}>Gelarry</span></div>
+            <div className="itemBar"><span onClick={onClickBarItem('Galerry')}>Gelarry</span></div>
             
         </div>
     );
