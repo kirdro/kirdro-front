@@ -96,3 +96,19 @@
   position: fixed;
   z-index: 100000000000;
 }
+.lightBox {
+  font-family: Verdana;
+  div.react-photo-gallery--gallery {
+    div {
+      img:hover {
+        //filter: sepia(20%);
+        filter: grayscale(0%);
+      }
+      img {
+        filter: grayscale(100%);
+        transition: filter .5s;
+
+      }
+    }
+  }
+}

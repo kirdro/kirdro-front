@@ -1,7 +1,7 @@
 
 import ReactDOM from 'react-dom'
 import './main.less'
-import React, { useState,memo } from 'react';
+import React, { useState,memo,useEffect } from 'react';
 
 import styled from 'styled-components'
 import MainButton from './components/buttonMenu'
@@ -14,6 +14,13 @@ import MainGallery from "./components/gallery";
 import MetaTags from 'react-meta-tags';
 import ReactAudioPlayer from 'react-audio-player';
 import Song from './songs/bensound-dreams.mp3'
+import MainTitle from "./components/title";
+import Api from "./api";
+import Action from "./actions";
+import MainBlog from "./components/blog";
+import MainArticle from "./components/article";
+import MainSkills from "./components/skills";
+import MainAbout from "./components/about";
 
 let DivBoxWithBackground = styled.div`
 filter: ${props => props.isPressed ? 'blur(10px)' : 'blur(0px)'};
@@ -21,12 +28,53 @@ filter: ${props => props.isPressed ? 'blur(10px)' : 'blur(0px)'};
 let DivBoxImage = styled.div`
 background: url("https://pp.userapi.com/c317731/v317731253/2ae9/hzLyIA9dGfA.jpg") no-repeat center;
 background-size: 100%;
-background-position: bottom;
+background-position: center;
 display: ${props => props.statusBar === 'Main' ? 'block' : 'none'};
+`
+
+let DivLogo = styled.div`
+  position: absolute;
+  background: url(${props => props.logoTemp}) no-repeat center;
+  background-size: 100%;
+  width: 100px;
+  height: 100px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1;
 `
 const MainComponent = memo(() => {
     const [isPressed, onClick] = useGlobal('isPressedButtonMenu');
     const [statusBar, onClick2] = useGlobal('statusBar');
+    const [ photos, setPhotos ] = useGlobal('gallery');
+    const [ blog, setBlog ] = useGlobal('blog');
+    const [ logo, setLogo ] = useGlobal('logo');
+    const [ titleHomePage, settitleHomePage ] = useGlobal('titleHomePage');
+    const [ buttons, setButtons ] = useGlobal('buttonsMenu');
+    const [ blogSection, setBlogSection ] = useGlobal('blogSection');
+    const [ skills, setSkills ] = useGlobal('skills');
+    const [ about, setAbout ] = useGlobal('about');
+
+    useEffect(() => {
+
+
+        Api.getFetch('http://api.kirdro.site/photos', setPhotos, Action.getPhotos)
+
+        Api.getFetch('http://api.kirdro.site/blogs', setBlog, Action.getBlog)
+        Api.getFetch('http://api.kirdro.site/logos', setLogo, Action.getLogo)
+        Api.getFetch('http://api.kirdro.site/titlehomepages', settitleHomePage, Action.getTtitleHomePage)
+        Api.getFetch('http://api.kirdro.site/menubuttons', setButtons, Action.getButtons)
+        Api.getFetch('http://api.kirdro.site/blogsections', setBlogSection, Action.getBlogSections)
+        Api.getFetch('http://api.kirdro.site/skills', setSkills, Action.getSkills)
+        Api.getFetch('http://api.kirdro.site/abouts', setAbout, Action.getAbout)
+
+    }, []);
+
+    // console.log('>>>>>>>>>>>', titleHomePage)
+
+    let logoTemp = null;
+    if (logo !== null) {
+        logoTemp = logo[0].image.url
+    }
 
     const onClickLogo = () => {
         onClick2('Main')
@@ -39,17 +87,23 @@ const MainComponent = memo(() => {
     else if (statusBar === 'Work') {
         componentInContent = <WorkBox/>
     }
-    else if (statusBar === 'Services') {
-        componentInContent = <Mainservices/>
+    else if (statusBar === 'Skills') {
+        componentInContent = <MainSkills/>
     }
-    else if (statusBar === 'Galerry') {
+    else if (statusBar === 'Gallery') {
         componentInContent = <MainGallery/>
+    }
+    else if (statusBar === 'Blog') {
+        componentInContent = <MainBlog/>
+    }
+    else if (statusBar === 'Blog/Article') {
+        componentInContent = <MainArticle/>
     }
     let somePlaylist = {
         name: 'Song',
         src: Song
     }
-    console.log('>>>>>', Song)
+
     return (
         <div className={'main'}>
             <MetaTags>
@@ -73,27 +127,28 @@ const MainComponent = memo(() => {
                 <meta name="theme-color" content="#ffffff" />
             </MetaTags>
             <div className="container">
-                <DivBoxWithBackground isPressed={isPressed} className="box">
-                    <div onClick={onClickLogo} className="logo"></div>
+                <DivBoxWithBackground  isPressed={isPressed} className="box">
+                    <DivLogo  logoTemp={`http://api.kirdro.site${logoTemp}`} onClick={onClickLogo} className="logo"></DivLogo>
                     <DivBoxImage statusBar={statusBar} className="boxImage">
                         <div className="titleSite">
                             <div className={'title'}>
-                                <h1>Kirdro</h1>
-                                <span>Hello! it's my site. My life, my style!</span>
+                                <h1>{titleHomePage !== null ? titleHomePage[0].title : ''}</h1>
+                                <span>{titleHomePage !== null ? titleHomePage[0].discription : ''}</span>
                             </div>
                         </div>
                     </DivBoxImage>
 
-                    <div className="content">
+                    {statusBar === 'Main' ? null : <div className="content">
                         {componentInContent}
-                    </div>
+                        <MainAbout statusBar={statusBar} />
+                    </div>}
                 </DivBoxWithBackground>
                 <BarMain/>
                 <MainButton/>
 
                 <ReactAudioPlayer
                     src={Song}
-                    autoPlay
+                    autoPlay={false}
                     loop
                     volume={0.3}
                     controls={true}
@@ -106,7 +161,16 @@ const MainComponent = memo(() => {
 
 setGlobal({
     isPressedButtonMenu: false,
-    statusBar:'Main'
+    statusBar:'Main',
+    gallery: [],
+    blog: null,
+    article: null,
+    logo:null,
+    titleHomePage:null,
+    buttonsMenu:null,
+    blogSection:null,
+    skills:null,
+    about:null
 });
 
 

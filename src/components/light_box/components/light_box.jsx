@@ -7,6 +7,7 @@ import {PhotoSwipe,PhotoSwipeGallery} from 'react-photoswipe';
 
 import Gallery from 'react-photo-gallery';
 
+
 let options = {
 
     index:0,
@@ -39,11 +40,18 @@ const LightBox = memo(({listImages}) => {
     })
 
 
+    console.log('>>>>>>>>>>', listImages)
     return (
         <div className={'lightBox'}>
             {/*{componentImagesNode}*/}
-            <Gallery photos={listImages} onClick={onClickItem} />
+            <Gallery
+                photos={listImages} onClick={onClickItem}
+                // columns={columns}
+                // direction={'column'}
+
+            />
             <PhotoSwipe isOpen={isOpen} items={listImages} options={options} onClose={onClick}/>
+
 
 
         </div>
