@@ -1,0 +1,18 @@
+
+Kjavascript:S1128"(Remove this unused import of 'useState'.(ÄçÚ°8ò¶îº†-
+ijavascript:UnusedVariable3"8Remove the declaration of the unused 'buttons' variable.(Ó‚–œşÿÿÿÿ8ŒêõŒ-
+ajavascript:UnusedVariable0"5Remove the declaration of the unused 'blog' variable.(•¡Ù¸8ÇÚ†É‹-
+djavascript:UnusedVariable-"8Remove the declaration of the unused 'onClick' variable.(µƒ¦Ú8¹µØÜ†-
+\javascript:S1854/"9Remove this useless assignment to local variable "photos"(Úç¹»8ÊùşÅ‹-
+]javascript:S1854-":Remove this useless assignment to local variable "onClick"(µƒ¦Ú8¹µØÜ†-
+bjavascript:S18543":Remove this useless assignment to local variable "buttons"(Ó‚–œşÿÿÿÿ8ŒêõŒ-
+gjavascript:S1854c"?Remove this useless assignment to local variable "somePlaylist"(ºˆ¤ÿÿÿÿÿ8¦ôßÂ‹-
+cjavascript:UnusedVariable/"7Remove the declaration of the unused 'photos' variable.(Úç¹»8ÊùşÅ‹-
+cjavascript:UnusedVariable5"7Remove the declaration of the unused 'skills' variable.(¨’°8ü“ËÄŒ-
+njavascript:UnusedVariablec"=Remove the declaration of the unused 'somePlaylist' variable.(ºˆ¤ÿÿÿÿÿ8¦ôßÂ‹-
+Ljavascript:S1128")Remove this unused import of 'MainTitle'.(”îå«8¼‹ÀÍ‹-
+hjavascript:UnusedVariable4"<Remove the declaration of the unused 'blogSection' variable.(åùâº8ÃÈ‰·Œ-
+Zjavascript:S18540"7Remove this useless assignment to local variable "blog"(•¡Ù¸8ÇÚ†É‹-
+Tjavascript:S1128",Remove this unused import of 'Mainservices'.(¡÷¥êúÿÿÿÿ8¸ëûÃŒ-
+ajavascript:S18544">Remove this useless assignment to local variable "blogSection"(åùâº8ÃÈ‰·Œ-
+\javascript:S18545"9Remove this useless assignment to local variable "skills"(¨’°8ü“ËÄŒ-
